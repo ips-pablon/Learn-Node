@@ -46,7 +46,7 @@ storeSchema.pre('save', async function (next) {
     const slugRegEx = new RegExp(`(${this.slug})((-[0-9]*$)?)`, 'i');
     const storesWithSlug = await this.constructor.find({slug: slugRegEx});
 
-    if(storesWithSlug.length) {
+    if (storesWithSlug.length) {
         this.slug = `${this.slug}-${storesWithSlug.length+1}`;
     }
 

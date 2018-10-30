@@ -5,13 +5,13 @@ block content
         form.form(action="/register" method="POST")
             h2 Register
             label(for="name") Name
-            input(type="text" name="name" value=(body && body.name) required)
+            input(type="text" name="name" id="name" value=(body && body.name) required)
             label(for="email") Email
-            input(type="email" name="email" value=(body && body.email) required)
+            input(type="email" name="email" id="email" value=(body && body.email) required)
             label(for="password") Password
-            input(type="password" name="password" required)
+            input(type="password" name="password" id="password" required)
             label(for="password-confirm") Confirm Password
-            input(type="password" name="password-confirm" )
+            input(type="password" name="password-confirm" id="password-confirm" required)
             input.button(type="submit" value="Register →")
             pre= h.dump(body)
 
